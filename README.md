@@ -22,6 +22,7 @@ The goal for this first milestone is to have a working "breeding" system for MID
 Currently the concept for the breeding system is to use both functionalities of magenta's MusicVAE model. The [MusicVAE model](https://magenta.tensorflow.org/music-vae) can either create new sequences which are reconstructions or variations of a single piece of input data, or it can smoothly interpolate between two pieces of input data. If we:
 1. Do a small reconstruction/variation of both the parent beats. Then:
 2. Interpolate a random amount between the reconstruction/variations of the parents.
+
 And repeat both steps a couple dozen times... Then we have enough beat offspring to fill a greenhouse full of plants that are the beats!
 
 #### Week 2
