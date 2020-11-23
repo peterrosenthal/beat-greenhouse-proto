@@ -1,0 +1,9 @@
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+
+!/.yarn/cache
+
+node_modules/
+src/*.js
