@@ -1,6 +1,28 @@
 # Growing Beats
 An interactive way (a game if you will) to explore and create machine learning generated music
 
+## Build Instructions
+To build and run the game in its development state: 
+1. Clone this repo
+```
+git clone https://github.com/peterrosenthal/growing-beats.git
+cd growing-beats
+```
+2. Install the dependencies (assuming you have [Yarn installed](https://github.com/peterrosenthal/growing-beats.git))
+```
+yarn
+yarn install
+```
+3. Build the project
+```
+yarn build
+```
+4. Start a local server
+```
+yarn serve
+```
+5. In your web browser go to `localhost:8080` to access the local server and the game
+
 ## Tools
 * [Magenta.js](https://github.com/magenta/magenta-js), more specifically MusicVAE, as the ML backend of the project.
 * [three.js](https://github.com/mrdoob/three.js) to handle all of the usual 3D aspects of a game.
