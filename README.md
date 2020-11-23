@@ -27,4 +27,4 @@ And repeat both steps a couple dozen times... Then we have enough beat offspring
 
 #### Week 2
 Typescript is pretty darn fun. I think it helps that I'm learning typescript and magentajs at the same time, because a lot, if not most, of magenta's examples are in typescript. I started with one of these examples, and they used yarn and webpack, so that's the reason I'm now using Yarn for package management in this project, and webpack for building. I'm not sure if I actually do need to use webpack or not, but it turns all of my code into one line which makes debugging harder, so I *really* need to learn more about that program. For now I'm still just using regular old HTML elements, minimal CSS, and magenta's built in MIDI sequence visualizer that is built on SVGs. So the goal for next week is to really pretty it up with CSS, and get some fun interactive drawing incorporated into the music using p5\*js.
-![Screenshot of the very first prototype of the game](/resources/magenta-prototype-2020-11-23.png)
+![Screenshot of the very first prototype of the game](/res/magenta-prototype-2020-11-23.png)
