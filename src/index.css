@@ -1,18 +1,185 @@
+:root {
+    --purple: #820263;
+    --pink: #d90368;
+    --grey: #eadeda;
+    --blue: #2e294e;
+    --yellow: #ffd400;
+}
+
+html {
+    background-color: var(--grey);
+}
+
 body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#helpButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#help {
+    display: none;
+
+    background-color: var(--blue);
+    color: var(--grey);
+
+    text-align: left;
+    font-size: 1.2em;
+
+    padding: 0.25em;
+    border-radius: 10px;
+    width: 70%;
+    margin: 2em auto;
+}
+
+h1 {
+    color: var(--purple);
+    text-align: center;
+    font-size: 3.2em;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.cardContainer {
+    width: 1050px;
+    margin: auto;
+    
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+@media only screen and (max-width: 1070px) {
+    .cardContainer{
+        width: 500px;
+    }
+}
+
+.card {
+    background-color: var(--blue);
+    border-radius: 12px;
+    text-align: center;
+
+    width: 500px;
+
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+#childCard {
+    margin: auto;
+}
+
+.card h2 {
+    color: var(--yellow);
+    font-size: 2em;
+    margin: 0.5em;
+}
+
+.card .titleButton {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.card .upButton {
+    border-width: 0px;
+    
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.card .downButton {
+    border-width: 0px;
+    
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.card .editor {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+}
+
+.card canvas {
+    border-radius: 10px;
+}
+
+.card .playButton {
+    border-width: 0px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+}
+
+.card .select {
+    display: none;
+
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 3;
+
+    grid-template-columns: 10% 90%;
+}
+
+.selectTitle {
+    background-color: var(--blue);
+    color: var(--yellow);
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: .4em;
+    padding-top: .4em;
+
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.selectBack {
+    background-color: var(--blue);
+
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.selectButtons {
+    background-color: var(--blue);
+
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+}
+
+.select button {
+    color: var(--yellow);
+    font-size: 1.5em;
+    margin: auto;
+}
+
+.buttonsGrid {
+    width: 290px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     padding: 2em;
-    font-family: monospace;
 }
 
 button {
     display: block;
     font-family: inherit;
     font-size: inherit;
-    border: 1px solid grey;
+    border: 0px;
     background: transparent;
     cursor: pointer;
     padding: 4px 8px;
 }
 
-button:hover {
-    border-color: black;
+.upButton:hover  img, .downButton:hover  img, .playButton:hover  img, #generateButton:hover  img, #swapChildParentAButton:hover  img, #swapChildParentBButton:hover  img, .selectBack:hover  img {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(5731%) hue-rotate(324deg) brightness(85%) contrast(101%); /* thanks to https://codepen.io/sosuke/pen/Pjoqqp */
 }
+
+.upButton:active img, .downButton:active img, .playButton:active img, #generateButton:active img, #swapChildParentAButton:active img, #swapChildParentBButton:active img, .selectBack:active img {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(44%) saturate(7174%) hue-rotate(303deg) brightness(92%) contrast(107%); /* thanks to https://codepen.io/sosuke/pen/Pjoqqp */
+}
+

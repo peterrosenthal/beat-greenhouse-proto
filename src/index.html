@@ -1,30 +1,135 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Growing Beats by Peter Rosenthal</title>
+        <title>Beat Breeding Prototype by Peter Rosenthal</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="index.css">
     </head>
 
     <body>
-        <h1>Magenta Melody Breeding Prototype</h1>
+        <h1>Magenta.js Beat-Breeding Prototype</h1>
 
-        <h2>Parent 1</h2>
-        <svg id="parent1Viz"></svg>
-        <button id="playParent1Button">Play</button>
+        <button id="helpButton">
+            <img src="images/help.png" alt="Help" title="Help">
+        </button>
+        <div id="help">
+            <p>Hello! Welcome to my beat breeding prototype using magenta.js. I plan on evetually using this as a component of a much larger music game.</p>
+            <ul>
+                <li>To "breed" or re-breed the two parent beats, hit the icons with the arrows curving in towards each other at the very center of the page.</li>
+                <li>Clicking the up and down arrows icon to the left of that will swap the child melody with the first parent for some slightly incestual breeding. And the same icon to the right will swap the child with the second parent.</li>
+                <li>To listen to any of the melodies, hit the yellow play button below the respective melodies.</li>
+                <li>You can change the parent melodies to a few presets by clicking on the name "Parent A" or "Parent B".</li>
+                <li>Each melody visualizer is actually also a full on MIDI editor!<br>
+                    <ul>
+                        <li>Click on a note that already exists to delete it.</li>
+                        <li>Click on an empty spot to create a quarter note.</li>
+                        <li>Click and drag on an empty spot to create a note storter or longer than a quater note.</li>
+                        <li>Hold shift when placing an eighth note to place it on the up beat.</li>
+                        <li>Click the up or down arrows to the left of the piano roll to scroll up or down in the notes.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-        <h2>Parent 2</h2>
-        <svg id="parent2Viz"></svg>
-        <button id="playParent2Button">Play</button>
+        <div class="cardContainer">
+            <div class="card">
+                <button class="titleButton" id="parentATitleButton">
+                    <h2>Parent A</h2>
+                </button>
+                <button class="upButton" id="parentAScrubUp">
+                    <img src="images/upArrow.png" alt="Increase pitch of editor" title="View higher notes">
+                </button>
+                <button class="downButton" id="parentAScrubDown">
+                    <img src="images/downArrow.png" alt="Decrease pitch of editor" title="View lower notes">
+                </button>
+                <div class="editor" id="parentASequenceEditor"></div>
+                <button class="playButton" id="parentAButton">
+                    <img src="images/playButton.png" alt="Play" title="Play">
+                </button>
+                <div class="select" id="parentASelector">
+                    <button class="selectBack">
+                        <img src="images/leftArrow.png" alt="Back" title="Back">
+                    </button>
+                    <span class="selectTitle">Select a saved sequence:</span>
+                    <div class="selectButtons">
+                        <button class="selectEMPTY">Empty Sequence</button>
+                        <button class="selectTWINKLE_FIRST_HALF">Twinkle</button>
+                        <button class="selectTWINKLE_SECOND_HALF">Twinkle 2</button>
+                    </div>
+                </div>
+            </div>
 
-        <h2>Child</h2>
-        <button id="genChildButton">Generate</button>
-        <svg id="childViz"></svg>
-        <button id="playChildButton" disabled>Play</button>
-        <button id="swapChildParent1Button" disabled>Swap with Parent 1</button>
-        <button id="swapChildParent2Button" disabled>Swap with Parent 2</button>
+            <div class="card">
+                <button class="titleButton" id="parentBTitleButton">
+                    <h2>Parent B</h2>
+                </button>
+                <button class="upButton" id="parentBScrubUp">
+                    <img src="images/upArrow.png" alt="Increase pitch of editor" title="View higher notes">
+                </button>
+                <button class="downButton" id="parentBScrubDown">
+                    <img src="images/downArrow.png" alt="Decrease pitch of editor" title="View lower notes">
+                </button>
+                <div class="editor" id="parentBSequenceEditor"></div>
+                <button class="playButton" id="parentBButton">
+                    <img src="images/playButton.png" alt="Play" title="Play">
+                </button>
+                <div class="select" id="parentBSelector">
+                    <button class="selectBack">
+                        <img src="images/leftArrow.png" alt="Back" title="Back">
+                    </button>
+                    <span class="selectTitle">Select a saved sequence:</span>
+                    <div class="selectButtons">
+                        <button class="selectEMPTY">Empty Sequence</button>
+                        <button class="selectTWINKLE_FIRST_HALF">Twinkle</button>
+                        <button class="selectTWINKLE_SECOND_HALF">Twinkle 2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonsGrid">
+            <button id="swapChildParentAButton">
+                <img src="images/swapArrows.png" alt="Swap with Parent A" title="Swap Child with Parent A">
+            </button>
+            <button id="generateButton">
+                <img src="images/generateIcon.png" alt="Generate new child sequence" title="Generate new Child sequence">
+            </button>
+            <button id="swapChildParentBButton">
+                <img src="images/swapArrows.png" alt="Swap with Parent B" title="Swap Child with Parent B">
+            </button>
+        </div>
+
+        <div class="card" id="childCard">
+            <button class="titleButton" id="childTitleButton">
+                <h2>Child</h2>
+            </button>
+            <button class="upButton" id="childScrubUp">
+                <img src="images/upArrow.png" alt="Increase pitch of editor" title="View higher notes">
+            </button>
+            <button class="downButton" id="childScrubDown">
+                <img src="images/downArrow.png" alt="Decrease pitch of editor" title="View lower notes">
+            </button>
+            <div class="editor" id="childSequenceEditor"></div>
+            <button class="playButton" id="childButton">
+                <img src="images/playButton.png" alt="Play the Child sequence" title="Play">
+            </button>
+            <div class="select" id="childSelector">
+                <button class="selectBack">
+                    <img src="images/leftArrow.png" alt="Back" title="Back">
+                </button>
+                <span class="selectTitle">Select a saved sequence:</span>
+                <div class="selectButtons">
+                    <button class="selectEMPTY">Empty Sequence</button>
+                    <button class="selectTWINKLE_FIRST_HALF">Twinkle</button>
+                    <button class="selectTWINKLE_SECOND_HALF">Twinkle 2</button>
+                </div>
+            </div>
+        </div>
 
         <script src="index.js"></script>
     </body>
