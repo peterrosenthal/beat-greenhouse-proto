@@ -1,6 +1,6 @@
 {
   "name": "growing-beats",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A game like exploration of ML Music",
   "dependencies": {
     "@magenta/music": "^1.20.0",
