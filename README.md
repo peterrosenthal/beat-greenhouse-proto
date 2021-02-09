@@ -1,5 +1,5 @@
 # Growing Beats
-An interactive way (a game if you will) to explore and create machine learning generated music
+A ludic exploration of music creation through a gardening/cultivation lens.
 
 ## Build Instructions
 To build and run the game in its development state: 
