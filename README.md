@@ -1,4 +1,4 @@
-# Growing Beats
+# Beat Greenhouse
 A ludic exploration of music creation through a gardening/cultivation lens.
 
 ## Build Instructions
@@ -37,7 +37,7 @@ yarn serve
 Really awesome website to show off the prototype beat-breeding algorithm! [peter.rosenth.al/beat-breeder/](http://peter.rosenth.al/beat-breeder)
 
 ### Milestone 1: Dec 7 - CTD Creative Code Final Project
-This Growing Beats project is bigger than I can finish by the end of this semester, especially with how much I have to learn for it. But I can scope down the projects into several independent parts, and each part can be done as different school projects at different times. The first of these parts is going to be my final project for the class [Creative Code](https://github.com/peterrosenthal/ctd-creative-code).
+This Growing Beats (now renamed to Beat Greenhouse) project is bigger than I can finish by the end of this semester, especially with how much I have to learn for it. But I can scope down the projects into several independent parts, and each part can be done as different school projects at different times. The first of these parts is going to be my final project for the class [Creative Code](https://github.com/peterrosenthal/ctd-creative-code).
 
 The goal for this first milestone is to have a working "breeding" system for MIDI beats done with magenta. Then once that is completed, I can start working on a system that ties each beat to a uniquely generated plant. This doesn't have to be (and won't be!) a good looking procedurally generated plant at all. I probably won't waste any time learning good 3D modeling yet, and I might not even bother with learning three.js yet. It will probably be wise for me to stick with some of the simple 2D drawing I already know with p5:boom:js already.
 
